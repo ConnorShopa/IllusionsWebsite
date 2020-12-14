@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    padding: 0:
+    box-sizing: border-box;
+    font-family: sans-serif;
+    background: #c0def2;
+    text-align: center;
+}
+
+/* Biplane & clouds attributes */
+
+#planeIll {
+    margin-top: 10%;
+    position: fixed;
+    width: 25%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+#cloudsIll {
+    margin-top: 10%;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+
+/* Vertical scrolling attributes to match with skrollr.js math & dimensions */
+
+.container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+}
+
+.container section {
+min-width: 100%;
+height: auto;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+.container section .quote {
+    max-width: 800px;
+    padding: 40px;
+    text-align: center;
+
+}
+
+.container section .quote h2{
+    font-size: 2em;
+    text-align: center
+}
+.container section .quote p{
+    font-size: 1.1em;
+    text-align: center
+}
+
+/* Animation of biplane */
+
+
+#prop {
+    animation: propAnimation 0.1s infinite alternate;
+    transform-origin: center;
+    transform-box: fill-box;
+
+}
+@keyframes propAnimation {
+    from{
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateZ(360deg); 
+    }
+}
+
+#clouds {
+    animation: cloudsAnimation 5s infinite;
+    transform-box: fill-box;
+    -moz-transform-origin: center;
+    
+}
+
+@keyframes cloudsAnimation {
+    from{
+        transform: rotateX(0deg) translateX(150vw);
+    }
+    to{
+        transform: rotateX(30deg) translateX(-150vw);
+    }
+}
+
+#plane{
+    animation: planeAnimation 3s infinite alternate;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+@keyframes planeAnimation {
+    0%{
+        transform: translateY(-100) rotateZ(15deg);
+        
+        
+        
+    }
+    100%{
+        transform: translateY(100px) rotateZ(15deg);
+          
+        
+    }
+} 
+
+
+
